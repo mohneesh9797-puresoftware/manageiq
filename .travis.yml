@@ -1,10 +1,13 @@
 ---
 language: ruby
-
+dist: bionic
+sudo: required
+group: edge
+virt: lxd
 dist: bionic
 arch: 
     - amd64
-    - arm64
+    - arm64-graviton2
 rvm:
 - 2.5.8
 - 2.6.6
