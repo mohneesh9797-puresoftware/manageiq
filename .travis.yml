@@ -1,9 +1,13 @@
 ---
 language: ruby
 dist: bionic
-arch:
-    - amd64
-    - arm64
+jobs:
+    - arch: amd64
+    - dist: focal
+      sudo: required
+      group: edge
+      arch: arm64-graviton2
+      virt: vm
 rvm:
 - 2.5.8
 - 2.6.6
