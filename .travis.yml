@@ -27,7 +27,7 @@ addons:
   postgresql: '11'
 before_install:
 - source ${TRAVIS_BUILD_DIR}/tools/ci/before_install.sh
-- sudo apt-get install libpq-dev
+- sudo apt-get install libpq-dev libcurl4-openssl-dev
 
 before_script:
 - bundle exec rake test:$TEST_SUITE:setup
