@@ -21,7 +21,7 @@ env:
 matrix:
   fast_finish: true
 addons:
-  postgresql: '9.6'
+  postgresql: '10'
 before_install:
 - source ${TRAVIS_BUILD_DIR}/tools/ci/before_install.sh
 - sudo apt-get install libpq-dev libcurl4-openssl-dev
