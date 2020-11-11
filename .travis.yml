@@ -1,25 +1,90 @@
 ---
 language: ruby
-dist: bionic
-sudo: required
-group: edge
-virt: lxd
-arch:
-    - amd64
-    - arm64-graviton2
-rvm:
-- 2.5.8
-- 2.6.6
-cache: bundler
-env:
-  global:
-  - RUBY_GC_HEAP_GROWTH_MAX_SLOTS=300000
-  - RUBY_GC_HEAP_INIT_SLOTS=600000
-  - RUBY_GC_HEAP_GROWTH_FACTOR=1.25
-  - PARALLEL_TEST_PROCESSORS=2
-  matrix:
-  - TEST_SUITE=vmdb PARALLEL=true
-  - TEST_SUITE=brakeman
+jobs:
+    - arch: amd64
+      dist: bionic
+      rvm: 2.5.8
+      env:
+      - RUBY_GC_HEAP_GROWTH_MAX_SLOTS=300000
+      - RUBY_GC_HEAP_INIT_SLOTS=600000
+      - RUBY_GC_HEAP_GROWTH_FACTOR=1.25
+      - PARALLEL_TEST_PROCESSORS=2
+      - TEST_SUITE=vmdb PARALLEL=true
+    - arch: amd64
+      dist: bionic
+      rvm: 2.6.6
+      env:
+      - RUBY_GC_HEAP_GROWTH_MAX_SLOTS=300000
+      - RUBY_GC_HEAP_INIT_SLOTS=600000
+      - RUBY_GC_HEAP_GROWTH_FACTOR=1.25
+      - PARALLEL_TEST_PROCESSORS=2
+      - TEST_SUITE=vmdb PARALLEL=true
+    - arch: amd64
+      dist: bionic
+      rvm: 2.5.8
+      env:
+      - RUBY_GC_HEAP_GROWTH_MAX_SLOTS=300000
+      - RUBY_GC_HEAP_INIT_SLOTS=600000
+      - RUBY_GC_HEAP_GROWTH_FACTOR=1.25
+      - PARALLEL_TEST_PROCESSORS=2
+      - TEST_SUITE=brakeman
+    - arch: amd64
+      dist: bionic
+      rvm: 2.6.6
+      env:
+      - RUBY_GC_HEAP_GROWTH_MAX_SLOTS=300000
+      - RUBY_GC_HEAP_INIT_SLOTS=600000
+      - RUBY_GC_HEAP_GROWTH_FACTOR=1.25
+      - PARALLEL_TEST_PROCESSORS=2
+      - TEST_SUITE=brakeman
+    - sudo: required
+      group: edge
+      virt: lxd
+      dist: bionic
+      arch: arm64-graviton2
+      rvm: 2.5.8
+      env:
+      - RUBY_GC_HEAP_GROWTH_MAX_SLOTS=300000
+      - RUBY_GC_HEAP_INIT_SLOTS=600000
+      - RUBY_GC_HEAP_GROWTH_FACTOR=1.25
+      - PARALLEL_TEST_PROCESSORS=2
+      - TEST_SUITE=vmdb PARALLEL=true
+    - sudo: required
+      group: edge
+      virt: lxd
+      dist: bionic
+      arch: arm64-graviton2
+      rvm: 2.5.8
+      env:
+      - RUBY_GC_HEAP_GROWTH_MAX_SLOTS=300000
+      - RUBY_GC_HEAP_INIT_SLOTS=600000
+      - RUBY_GC_HEAP_GROWTH_FACTOR=1.25
+      - PARALLEL_TEST_PROCESSORS=2
+      - TEST_SUITE=brakeman
+    - sudo: required
+      group: edge
+      virt: lxd
+      dist: bionic
+      arch: arm64-graviton2
+      rvm: 2.6.6
+      env:
+      - RUBY_GC_HEAP_GROWTH_MAX_SLOTS=300000
+      - RUBY_GC_HEAP_INIT_SLOTS=600000
+      - RUBY_GC_HEAP_GROWTH_FACTOR=1.25
+      - PARALLEL_TEST_PROCESSORS=2
+      - TEST_SUITE=vmdb PARALLEL=true
+    - sudo: required
+      group: edge
+      virt: lxd
+      dist: bionic
+      arch: arm64-graviton2
+      rvm: 2.6.6
+      env:
+      - RUBY_GC_HEAP_GROWTH_MAX_SLOTS=300000
+      - RUBY_GC_HEAP_INIT_SLOTS=600000
+      - RUBY_GC_HEAP_GROWTH_FACTOR=1.25
+      - PARALLEL_TEST_PROCESSORS=2
+      - TEST_SUITE=brakeman 
 matrix:
   fast_finish: true
 addons:
