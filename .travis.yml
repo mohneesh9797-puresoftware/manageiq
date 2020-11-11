@@ -85,8 +85,7 @@ jobs:
       - RUBY_GC_HEAP_GROWTH_FACTOR=1.25
       - PARALLEL_TEST_PROCESSORS=2
       - TEST_SUITE=brakeman 
-matrix:
-  fast_finish: true
+
 addons:
   postgresql: '10'
 before_install:
