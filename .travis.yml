@@ -1,5 +1,12 @@
 ---
 language: ruby
+dist: bionic
+sudo: required
+group: edge
+virt: lxd
+arch:
+    - amd64
+    - arm64-graviton2
 rvm:
 - 2.5.8
 - 2.6.6
@@ -18,7 +25,10 @@ matrix:
 addons:
   postgresql: '10'
 before_install:
+- git config --global user.name "mohneesh9797-puresoftware"
+- git config --global user.email "mohneesh.jha@puresoftware.com"
 - source ${TRAVIS_BUILD_DIR}/tools/ci/before_install.sh
+- sudo apt-get install -y libpq-dev libcurl4-openssl-dev
 before_script:
 - bundle exec rake test:$TEST_SUITE:setup
 script:
