@@ -89,6 +89,7 @@ jobs:
 addons:
   postgresql: '10'
 before_install:
+- sudo sed -i 's/127.0.1.1/127.0.0.1/' /etc/hosts
 - git config --global user.name "mohneesh9797-puresoftware"
 - git config --global user.email "mohneesh.jha@puresoftware.com"
 - source ${TRAVIS_BUILD_DIR}/tools/ci/before_install.sh
