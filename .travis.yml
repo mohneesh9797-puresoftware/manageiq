@@ -2,7 +2,6 @@
 language: ruby
 jobs:
     - arch: amd64
-      dist: bionic
       rvm: 2.5.8
       env:
       - RUBY_GC_HEAP_GROWTH_MAX_SLOTS=300000
@@ -11,7 +10,6 @@ jobs:
       - PARALLEL_TEST_PROCESSORS=2
       - TEST_SUITE=vmdb PARALLEL=true
     - arch: amd64
-      dist: bionic
       rvm: 2.6.6
       env:
       - RUBY_GC_HEAP_GROWTH_MAX_SLOTS=300000
@@ -20,7 +18,6 @@ jobs:
       - PARALLEL_TEST_PROCESSORS=2
       - TEST_SUITE=vmdb PARALLEL=true
     - arch: amd64
-      dist: bionic
       rvm: 2.5.8
       env:
       - RUBY_GC_HEAP_GROWTH_MAX_SLOTS=300000
@@ -29,7 +26,6 @@ jobs:
       - PARALLEL_TEST_PROCESSORS=2
       - TEST_SUITE=brakeman
     - arch: amd64
-      dist: bionic
       rvm: 2.6.6
       env:
       - RUBY_GC_HEAP_GROWTH_MAX_SLOTS=300000
